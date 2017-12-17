@@ -6,7 +6,7 @@ import java.util.Arrays;
 import cn.util.RandomSeeds;
 import cn.util.WriteToExcelUtil;
 
-public class TestDemo2 {
+public class Test3 { // 第三题
 
 	@SuppressWarnings("null")
 	public static void main(String[] args) throws Exception {
@@ -35,16 +35,11 @@ public class TestDemo2 {
 				temp[k][0] = k + 1;
 				int[] arr = new int[scale];
 				arr = RandomSeeds.RandSeeds(scale);
+				Sort.QuickSort(arr, 0, scale - 1);
 
 				// 计算运行时间
 				long begintime = System.currentTimeMillis();
-
 				Sort.BubbleSort(arr, scale);
-				// Sort.InsertionSort(arr, scale);
-				// Sort.QuickSort(arr, 0, scale - 1);
-				// Sort.MergeSort(arr, 0, scale - 1);
-				// Sort.HeapSort(arr, scale);
-
 				long endtime = System.currentTimeMillis();
 				long costTime = (endtime - begintime);
 				BigDecimal b = new BigDecimal(costTime);
@@ -53,7 +48,6 @@ public class TestDemo2 {
 				temp[k][1] = cost;
 
 				// 计算运行时间
-				arr = RandomSeeds.RandSeeds(scale);
 				begintime = System.currentTimeMillis();
 				Sort.InsertionSort(arr, scale);
 				endtime = System.currentTimeMillis();
@@ -64,9 +58,8 @@ public class TestDemo2 {
 				temp[k][2] = cost;
 
 				// 计算运行时间
-				arr = RandomSeeds.RandSeeds(scale);
 				begintime = System.currentTimeMillis();
-				Sort.QuickSort(arr, 0, scale - 1);
+				Sort.NonrecursiveQuick(arr, 0, arr.length - 1);
 				endtime = System.currentTimeMillis();
 				costTime = (endtime - begintime);
 				b = new BigDecimal(costTime);
@@ -75,7 +68,6 @@ public class TestDemo2 {
 				temp[k][3] = cost;
 
 				// 计算运行时间
-				arr = RandomSeeds.RandSeeds(scale);
 				begintime = System.currentTimeMillis();
 				Sort.MergeSort(arr, 0, scale - 1);
 				// Sort.HeapSort(arr, scale);
@@ -87,7 +79,6 @@ public class TestDemo2 {
 				temp[k][4] = cost;
 
 				// 计算运行时间
-				arr = RandomSeeds.RandSeeds(scale);
 				begintime = System.currentTimeMillis();
 				Sort.HeapSort(arr, scale);
 				endtime = System.currentTimeMillis();

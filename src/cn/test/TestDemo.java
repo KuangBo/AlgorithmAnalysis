@@ -38,13 +38,14 @@ public class TestDemo {
 		cost = b.divide(new BigDecimal(1000), 10, BigDecimal.ROUND_HALF_UP).doubleValue();
 		System.out.println(cost);
 
-		/*
-		 * // 计算运行时间 begintime = System.currentTimeMillis(); Sort.QuickSort(arr,
-		 * 0, scale - 1); endtime = System.currentTimeMillis(); costTime =
-		 * (endtime - begintime); b = new BigDecimal(costTime); cost =
-		 * b.divide(new BigDecimal(1000), 10,
-		 * BigDecimal.ROUND_HALF_UP).doubleValue(); System.out.println(cost);
-		 */
+		// 计算运行时间
+		begintime = System.currentTimeMillis();
+		Sort.NonrecursiveQuick(arr, 0, arr.length - 1);
+		endtime = System.currentTimeMillis();
+		costTime = (endtime - begintime);
+		b = new BigDecimal(costTime);
+		cost = b.divide(new BigDecimal(1000), 10, BigDecimal.ROUND_HALF_UP).doubleValue();
+		System.out.println(cost);
 
 		// 计算运行时间
 		begintime = System.currentTimeMillis();
